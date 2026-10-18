@@ -1,5 +1,5 @@
 ---
-name: studio-ui
+name: build
 description: Build a web UI from scratch (or restyle one) in the Sandbox Studio / Fleet dashboard design system — React 19 + Vite + Tailwind 4 + shadcn (new-york), near-monochrome dark-first theme, Inter + Geist Mono, collapsible sidebar shell, ⌘K palette, data tables, metric tiles, status badges. Use when the user asks for a dashboard, admin panel, console, control plane or internal tool UI, or says "studio style", "like Sandbox Studio", "like the fleet dashboard".
 ---
 
@@ -14,7 +14,7 @@ of a blank page.
 
 | Path | What it is |
 |---|---|
-| `scripts/scaffold.sh <dir> <app-key> ["Title"]` | Copies the starter into an empty dir and fills in names |
+| `${CLAUDE_SKILL_DIR}/scripts/scaffold.sh <dir> <app-key> ["Title"]` | Copies the starter into an empty dir and fills in names |
 | `assets/template/` | The starter: Vite config, theme CSS, 25+ shadcn components, sidebar shell, ⌘K palette, data table, example pages |
 | `references/design-system.md` | Tokens, colour rules, typography, spacing, motion. **Read before styling anything.** |
 | `references/patterns.md` | Page recipes (list, detail, form, overview, dialogs, empty/loading/error) with the exact classes |
@@ -23,10 +23,10 @@ of a blank page.
 ## Workflow
 
 1. **Decide the target.**
-   - New app → scaffold: `bash ~/.claude/skills/studio-ui/scripts/scaffold.sh <dir> <app-key> "<Title>"`, then `cd <dir> && npm install`.
-   - Existing React/Tailwind 4 app → copy `assets/template/src/index.css` (tokens), `src/components/{ui,common,data-table,shell}`, `src/lib/{utils,router,format,api}.ts`, `src/hooks/*`, `public/theme.js`; add the deps from `assets/template/package.json`. Keep the app's own router if it has one (replace `href`/`navigate`/`usePath`).
+   - New app → scaffold: `bash ${CLAUDE_SKILL_DIR}/scripts/scaffold.sh <dir> <app-key> "<Title>"`, then `cd <dir> && npm install`.
+   - Existing React/Tailwind 4 app → copy from `${CLAUDE_SKILL_DIR}/assets/template/`: `src/index.css` (tokens), `src/components/{ui,common,data-table,shell}`, `src/lib/{utils,router,format,api}.ts`, `src/hooks/*`, `public/theme.js`; add the deps from its `package.json`. Keep the app's own router if it has one (replace `href`/`navigate`/`usePath`).
    - Not React (Next.js is fine: it's React — drop `vite.config.ts`/`index.html`, put the CSS in `app/globals.css`, load `theme.js` with `<Script strategy="beforeInteractive">`, mark interactive components `"use client"`).
-2. **Read `references/design-system.md` and `references/patterns.md`.** They are short. Follow them rather than inventing new styles.
+2. **Read `${CLAUDE_SKILL_DIR}/references/design-system.md` and `${CLAUDE_SKILL_DIR}/references/patterns.md`** (and `voice.md` before writing UI text). They are short. Follow them rather than inventing new styles.
 3. **Shape the app**:
    - Screens go in `src/lib/nav.ts` (groups of `{title, path, icon, hint}`); routes in `App.tsx`'s `Route`.
    - One file per screen in `src/pages/`. Domain components in `src/components/<domain>/`.

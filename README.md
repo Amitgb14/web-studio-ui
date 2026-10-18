@@ -22,18 +22,23 @@ A [Claude Code](https://claude.com/claude-code) skill for building operator-faci
 
 ## Install
 
-Copy the folder into your skills directory:
+In Claude Code:
 
-```sh
-git clone https://github.com/Amitgb14/studio-ui ~/.claude/skills/studio-ui
+```
+/plugin marketplace add Amitgb14/studio-ui
+/plugin install studio-ui@studio-ui
 ```
 
-Then ask Claude Code for a dashboard or console, or run `/studio-ui`.
+Or from your shell: `claude plugin marketplace add Amitgb14/studio-ui && claude plugin install studio-ui@studio-ui`.
+
+Then ask for a dashboard, console or admin panel and the skill loads on its own, or run `/studio-ui:build`. Updates arrive when you run `/plugin marketplace update studio-ui`.
 
 ## Scaffold an app yourself
 
+The skill runs this for you. To run it by hand from a clone of this repo:
+
 ```sh
-bash ~/.claude/skills/studio-ui/scripts/scaffold.sh ./my-app acme "Acme Console"
+bash plugins/studio-ui/skills/build/scripts/scaffold.sh ./my-app acme "Acme Console"
 cd my-app && npm install && npm run dev
 ```
 
@@ -42,10 +47,14 @@ The example pages run on sample data in `src/lib/sample-data.ts`. Replace it wit
 ## Layout
 
 ```
-SKILL.md                    instructions Claude follows
-references/                 design-system.md, patterns.md, voice.md
-scripts/scaffold.sh         copy the starter and fill in names
-assets/template/            the starter app
+.claude-plugin/marketplace.json           the marketplace (one plugin)
+plugins/studio-ui/
+  .claude-plugin/plugin.json              the plugin manifest
+  skills/build/
+    SKILL.md                              instructions Claude follows
+    references/                           design-system.md, patterns.md, voice.md
+    scripts/scaffold.sh                   copy the starter and fill in names
+    assets/template/                      the starter app
 ```
 
 ## License
