@@ -3,7 +3,7 @@
 #   target-dir: a new folder, or one holding only repo basics (.git, .gitignore,
 #               README, LICENSE, .github, .DS_Store), so "." works in a fresh repo
 #   app-key:    lowercase; used for the wordmark, package name and theme storage key (e.g. "acme")
-# Copies the Studio UI starter into <target-dir> and fills in the names. Never
+# Copies the Web Studio UI starter into <target-dir> and fills in the names. Never
 # overwrites a file that's already there; an existing .gitignore gets the
 # starter's missing lines appended. Works with the stock bash and BSD tools on macOS.
 set -euo pipefail

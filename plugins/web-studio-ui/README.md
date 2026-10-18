@@ -1,12 +1,12 @@
-# Studio UI
+# Web Studio UI
 
 Build operator-facing web apps (dashboards, consoles, admin panels and internal tools) from scratch, in a consistent, dark-first design system based on [Sandbox Studio](https://github.com/Amitgb14/sandbox-cli). Ask Claude for a dashboard or a web UI and it starts from a working, styled React app instead of a blank page, then follows the design rules as the app grows.
 
-![Overview, dark](https://raw.githubusercontent.com/Amitgb14/studio-ui/main/assets/screenshots/overview-dark.png)
+![Overview, dark](https://raw.githubusercontent.com/Amitgb14/web-studio-ui/main/assets/screenshots/overview-dark.png)
 
 ## What it does
 
-The plugin adds one skill, `build` (run it as `/studio-ui:build`, or just ask for a dashboard, console or admin panel). With it, Claude:
+The plugin adds one skill, `build` (run it as `/web-studio-ui:build`, or just ask for a dashboard, console or admin panel). With it, Claude:
 
 - **Starts a new app** by copying a starter project into the folder you choose and filling in your app's name. The folder must be new, or hold only repository basics such as `.git`, a README, a LICENSE or `.gitignore`. Existing files are never overwritten.
 - **Restyles an existing React app** by copying the theme and components it needs.
@@ -35,7 +35,7 @@ The plugin collects no data and sends nothing anywhere. It has no hooks, MCP ser
 ## Usage
 
 ```
-/studio-ui:build a dashboard for our job queue in ./web
+/web-studio-ui:build a dashboard for our job queue in ./web
 ```
 
 Or describe what you want ("an admin panel for this API, with a users list and a settings page"), and the skill loads on its own.

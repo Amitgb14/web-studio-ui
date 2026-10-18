@@ -1,11 +1,11 @@
 {
-  "name": "studio-ui",
+  "name": "web-studio-ui",
   "description": "Build dashboards and consoles in the Sandbox Studio design system",
   "owner": { "name": "Amit Ghadge", "url": "https://github.com/Amitgb14" },
   "plugins": [
     {
-      "name": "studio-ui",
-      "source": "./plugins/studio-ui",
+      "name": "web-studio-ui",
+      "source": "./plugins/web-studio-ui",
       "description": "Design system, page patterns and a runnable React 19 + Vite + Tailwind 4 + shadcn starter for operator web UIs"
     }
   ]

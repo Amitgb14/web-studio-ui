@@ -1,14 +1,14 @@
 {
-  "name": "studio-ui",
-  "displayName": "Studio UI",
+  "name": "web-studio-ui",
+  "displayName": "Web Studio UI",
   "description": "Build dashboards, consoles and admin panels from scratch in the Sandbox Studio design system: React 19, Vite, Tailwind 4, shadcn, dark-first, with a runnable starter",
   "version": "1.0.0",
   "author": {
     "name": "Amit Ghadge",
     "url": "https://github.com/Amitgb14"
   },
-  "homepage": "https://github.com/Amitgb14/studio-ui",
-  "repository": "https://github.com/Amitgb14/studio-ui",
+  "homepage": "https://github.com/Amitgb14/web-studio-ui",
+  "repository": "https://github.com/Amitgb14/web-studio-ui",
   "license": "MIT",
   "keywords": [
     "ui",

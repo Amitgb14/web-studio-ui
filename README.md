@@ -1,4 +1,4 @@
-# studio-ui
+# web-studio-ui
 
 A [Claude Code](https://claude.com/claude-code) skill for building operator-facing web UIs — dashboards, consoles, admin panels — from scratch, in the visual language of [Sandbox Studio](https://github.com/Amitgb14/sandbox-cli).
 
@@ -25,31 +25,33 @@ A [Claude Code](https://claude.com/claude-code) skill for building operator-faci
 In Claude Code:
 
 ```
-/plugin marketplace add Amitgb14/studio-ui
-/plugin install studio-ui@studio-ui
+/plugin marketplace add Amitgb14/web-studio-ui
+/plugin install web-studio-ui@web-studio-ui
 ```
 
-Or from your shell: `claude plugin marketplace add Amitgb14/studio-ui && claude plugin install studio-ui@studio-ui`.
+Or from your shell: `claude plugin marketplace add Amitgb14/web-studio-ui && claude plugin install web-studio-ui@web-studio-ui`.
 
-Then, in your project, ask for a dashboard, console or admin panel ("build a web UI in ./web for this API") and the skill loads on its own, or run `/studio-ui:build`. Get updates with `/plugin marketplace update studio-ui`.
+Then, in your project, ask for a dashboard, console or admin panel ("build a web UI in ./web for this API") and the skill loads on its own, or run `/web-studio-ui:build`. Get updates with `/plugin marketplace update web-studio-ui`.
 
 > **Upgrading from the old skill folder?** If you cloned this repo into `~/.claude/skills/studio-ui`, remove that folder (`rm -rf ~/.claude/skills/studio-ui`) and install the plugin as above. A clone there no longer loads as a skill.
+>
+> **Installed it as `studio-ui`?** The plugin was renamed `web-studio-ui`. Remove the old one with `claude plugin marketplace remove studio-ui`, which also uninstalls it, then install as above.
 
 ## Scaffold an app yourself
 
 Claude runs the scaffold for you when you use the skill. To run it by hand, clone the repo anywhere (not into `~/.claude/skills`) and use the `scaffold.sh` at its root:
 
 ```sh
-git clone https://github.com/Amitgb14/studio-ui ~/src/studio-ui
+git clone https://github.com/Amitgb14/web-studio-ui ~/src/web-studio-ui
 
 # A new folder:
-bash ~/src/studio-ui/scaffold.sh ./my-app acme "Acme Console"
+bash ~/src/web-studio-ui/scaffold.sh ./my-app acme "Acme Console"
 
 # A UI inside an existing project, in its own subfolder:
-cd my-project && bash ~/src/studio-ui/scaffold.sh ./web acme "Acme Console"
+cd my-project && bash ~/src/web-studio-ui/scaffold.sh ./web acme "Acme Console"
 
 # The current folder, if it's a fresh repo (only .git, README, LICENSE, .gitignore):
-bash ~/src/studio-ui/scaffold.sh . acme "Acme Console"
+bash ~/src/web-studio-ui/scaffold.sh . acme "Acme Console"
 ```
 
 Then `cd` into the folder and run `npm install && npm run dev`.
@@ -66,7 +68,7 @@ The example pages run on sample data in `src/lib/sample-data.ts`. Replace it wit
 ```
 scaffold.sh                               shortcut to the scaffold script below
 .claude-plugin/marketplace.json           the marketplace (one plugin)
-plugins/studio-ui/
+plugins/web-studio-ui/
   .claude-plugin/plugin.json              the plugin manifest
   skills/build/
     SKILL.md                              instructions Claude follows

@@ -3,7 +3,7 @@ name: build
 description: Build a web UI from scratch (or restyle one) in the Sandbox Studio / Fleet dashboard design system — React 19 + Vite + Tailwind 4 + shadcn (new-york), near-monochrome dark-first theme, Inter + Geist Mono, collapsible sidebar shell, ⌘K palette, data tables, metric tiles, status badges. Use when the user asks for a dashboard, admin panel, console, control plane or internal tool UI, or says "studio style", "like Sandbox Studio", "like the fleet dashboard".
 ---
 
-# Studio UI
+# Web Studio UI
 
 A reusable recipe for operator-facing web apps (dashboards, consoles, admin
 tools) in the visual language of Sandbox Studio and the Fleet dashboard. It
