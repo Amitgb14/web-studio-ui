@@ -24,6 +24,7 @@ of a blank page.
 
 1. **Decide the target.**
    - New app → scaffold: `bash ${CLAUDE_SKILL_DIR}/scripts/scaffold.sh <dir> <app-key> "<Title>"`, then `cd <dir> && npm install`.
+     `<dir>` must be new, or hold only repo basics (`.git`, README, LICENSE, `.gitignore`), so `.` works in a fresh repo. Inside an existing project, use a subfolder such as `./web`. The script never overwrites files and refuses a folder that already has a project in it.
    - Existing React/Tailwind 4 app → copy from `${CLAUDE_SKILL_DIR}/assets/template/`: `src/index.css` (tokens), `src/components/{ui,common,data-table,shell}`, `src/lib/{utils,router,format,api}.ts`, `src/hooks/*`, `public/theme.js`; add the deps from its `package.json`. Keep the app's own router if it has one (replace `href`/`navigate`/`usePath`).
    - Not React (Next.js is fine: it's React — drop `vite.config.ts`/`index.html`, put the CSS in `app/globals.css`, load `theme.js` with `<Script strategy="beforeInteractive">`, mark interactive components `"use client"`).
 2. **Read `${CLAUDE_SKILL_DIR}/references/design-system.md` and `${CLAUDE_SKILL_DIR}/references/patterns.md`** (and `voice.md` before writing UI text). They are short. Follow them rather than inventing new styles.
